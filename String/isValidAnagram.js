@@ -23,24 +23,54 @@ Output: false
  * @param {string} t
  * @return {boolean}
  */
- let s = "anagram", t = "nagaram";
+ let s = "aacc", t = "ccca";
+
+//  "aacc"
+// "ccac"
  var isAnagram = function(s, t) {
+    /**
+     * Method 1 
+     * ----------------------------
+     * 
     if(s.length !==t.length) return false;
+    let sCountChar={};
+    let newS=s.split('').sort().join('');
+    let newT=t.split('').sort().join('');
+    return newS === newT;
+     * 
+     */
+   
+    /**
+     * Method 2 
+     * -------------------------------
+     let sCountChar={};
+    let tCountChar={};
+    for(let i=0;i<s.length;i++){
+        var sChar=s[i];
+        sCountChar[sChar]=sCountChar[sChar]+1 || 1;
+    }
+    console.log("sCountChar ::",sCountChar)
+
+    for(let j=0;j<t.length;j++){
+        const tChar=t[j];
+        tCountChar[tChar]=tCountChar[tChar]+1 || 1;
+    }
+    let tCountCharSorted=Object.keys(tCountChar).sort().reduce((r, k) => (r[k] = tCountChar[k], r), {});
+    let sCountCharSorted=Object.keys(sCountChar).sort().reduce((r, k) => (r[k] = sCountChar[k], r), {})
+    return JSON.stringify(tCountCharSorted)===JSON.stringify(sCountCharSorted);
+     */
     let sCountChar={};
     for(let i=0;i<s.length;i++){
         var sChar=s[i];
         sCountChar[sChar]=sCountChar[sChar]+1 || 1;
     }
+    console.log("sCountChar ::",sCountChar)
 
-    for(let i=0;i<t.length;t++){
-        const tChar=t[i];
-        if(!sCountChar[tChar]) return false;
-        else {
-            console.log(" sCountChar[tChar]-- ::", sCountChar[tChar]--," >>> i >>>",i);
-            sCountChar[tChar]--
-        };
+    for(let j=0;j<t.length;j++){
+        const tChar=t[j];
+        tCountChar[tChar]=tCountChar[tChar]+1 || 1;
     }
-    return true;
+    
 };
 
-isAnagram(s,t)
+console.log(">>> ",isAnagram(s,t));
