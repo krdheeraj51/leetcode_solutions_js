@@ -59,18 +59,24 @@ Output: false
     let sCountCharSorted=Object.keys(sCountChar).sort().reduce((r, k) => (r[k] = sCountChar[k], r), {})
     return JSON.stringify(tCountCharSorted)===JSON.stringify(sCountCharSorted);
      */
+
+    /**
+     * Method 3
+     */
     let sCountChar={};
     for(let i=0;i<s.length;i++){
         var sChar=s[i];
         sCountChar[sChar]=sCountChar[sChar]+1 || 1;
     }
-    console.log("sCountChar ::",sCountChar)
 
     for(let j=0;j<t.length;j++){
-        const tChar=t[j];
-        tCountChar[tChar]=tCountChar[tChar]+1 || 1;
+        var tChar=t[j];
+     if(!sCountChar[tChar]) return false;
+     else {
+        sCountChar[tChar]--;
+     }
     }
-    
+    return true;
 };
 
 console.log(">>> ",isAnagram(s,t));
