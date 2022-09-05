@@ -1,0 +1,22 @@
+{
+  "name": "leetcode_solutions_js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krdheeraj51/leetcode_solutions_js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krdheeraj51/leetcode_solutions_js/issues"
+  },
+  "homepage": "https://github.com/krdheeraj51/leetcode_solutions_js#readme",
+  "devDependencies": {
+    "jest": "^29.0.2"
+  }
+}

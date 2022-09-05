@@ -38,4 +38,8 @@ https://leetcode.com/problems/climbing-stairs/
     
 };
 
-console.log(":: ",climbStairs(6));
+// console.log(":: ",climbStairs(6));
+
+module.exports={
+    climbStairs  
+}
