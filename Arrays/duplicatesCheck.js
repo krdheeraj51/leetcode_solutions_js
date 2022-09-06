@@ -38,8 +38,7 @@ let nums = [1, 2, 3, 1];
  * Second Approach 
  * ------------------------
  */
-
-var containsDuplicate = function (nums) {
+ var containsDuplicate = function (nums) {
     var visitedNums = {};
     for (let i = 0; i < nums.length; i++) {
         const num = nums[i];
@@ -51,4 +50,9 @@ var containsDuplicate = function (nums) {
     }
     return false;
 }
-console.log(":::: ", containsDuplicate(nums))
+
+module.exports={
+    containsDuplicate
+}
+
+// console.log(":::: ", containsDuplicate(nums))
